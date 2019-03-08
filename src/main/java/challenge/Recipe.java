@@ -14,24 +14,24 @@ import java.util.List;
 public class Recipe {
 
     @Id
-    private String _id;
+    private String id;
 
     private String title;
 
     private String description;
 
-    private List<String> likes = new ArrayList<>();
+    private List<String> likes;
 
     private List<String> ingredients;
 
-    private List<RecipeComment> comments = new ArrayList<>();
+    private List<RecipeComment> comments;
 
-    public String get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setId(String _id) {
+        this.id = _id;
     }
 
     public String getTitle() {
@@ -55,6 +55,9 @@ public class Recipe {
     }
 
     public void addLike(String id) {
+        if (this.likes == null) {
+            this.likes = new ArrayList<>();
+        }
         this.likes.add(id);
     }
 
@@ -75,12 +78,15 @@ public class Recipe {
     }
 
     public void addComment(RecipeComment recipeComment) {
+        if (this.comments == null) {
+            this.comments = new ArrayList<>();
+        }
         this.comments.add(recipeComment);
     }
 
     public void updateComment(RecipeComment recipeComment) {
         RecipeComment recipeCommentToChange = this.comments.stream()
-                .filter(rc -> recipeComment.get_id().equals(rc.get_id()))
+                .filter(rc -> recipeComment.getId().equals(rc.getId()))
                 .findFirst().orElseThrow(() -> new RuntimeException("Comentario nao encontrado"));
 
         int index = this.comments.indexOf(recipeCommentToChange);
@@ -90,10 +96,11 @@ public class Recipe {
 
     public void removeComment(String recipeCommentId) {
         RecipeComment recipeComment = this.comments.stream()
-                .filter(rc -> recipeCommentId.equals(rc.get_id()))
+                .filter(rc -> recipeCommentId.equals(rc.getId()))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Comentario nao encontrado"));
 
         this.comments.remove(recipeComment);
     }
+
 }

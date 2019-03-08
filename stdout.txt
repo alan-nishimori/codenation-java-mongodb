@@ -1,0 +1,30 @@
+> Task :clean
+> Task :compileJava
+> Task :processResources
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+
+> Task :test
+2019-03-08 19:36:43.541  INFO 11515 --- [       Thread-9] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5dd3c4d1: startup date [Fri Mar 08 19:36:38 BRT 2019]; root of context hierarchy
+2019-03-08 19:36:43.542  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.542-0300 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54820 #3 (3 connections now open)
+2019-03-08 19:36:43.542  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.542-0300 I COMMAND  [conn3] terminating, shutdown command received
+2019-03-08 19:36:43.542  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.542-0300 I FTDC     [conn3] Shutting down full-time diagnostic data capture
+2019-03-08 19:36:43.543  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I CONTROL  [conn3] now exiting
+2019-03-08 19:36:43.543  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] shutdown: going to close listening sockets...
+2019-03-08 19:36:43.543  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] closing listening socket: 5
+2019-03-08 19:36:43.543  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] closing listening socket: 6
+2019-03-08 19:36:43.543  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] removing socket file: /tmp/mongodb-34167.sock
+2019-03-08 19:36:43.544  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] shutdown: going to flush diaglog...
+2019-03-08 19:36:43.544  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn3] shutdown: going to close sockets...
+2019-03-08 19:36:43.544  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I STORAGE  [conn3] WiredTigerKVEngine shutting down
+2019-03-08 19:36:43.544  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn2] end connection 127.0.0.1:54816 (2 connections now open)
+2019-03-08 19:36:43.544  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.543-0300 I NETWORK  [conn1] end connection 127.0.0.1:54812 (2 connections now open)
+2019-03-08 19:36:43.545  INFO 11515 --- [       Thread-9] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:2}] to localhost:34167 because the pool has been closed.
+2019-03-08 19:36:43.644  INFO 11515 --- [       Thread-5] d.f.e.process.runtime.ProcessControl     : stopOrDestroyProcess: process hasn't exited 
+2019-03-08 19:36:43.719  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.719-0300 I STORAGE  [conn3] shutdown: removing fs lock...
+2019-03-08 19:36:43.719  INFO 11515 --- [       Thread-6] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-03-08T19:36:43.719-0300 I CONTROL  [conn3] dbexit:  rc: 0
+
+BUILD SUCCESSFUL in 7s
+5 actionable tasks: 5 executed

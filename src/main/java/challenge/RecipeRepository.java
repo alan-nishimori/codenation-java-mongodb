@@ -10,5 +10,5 @@ public interface RecipeRepository extends MongoRepository<Recipe, String> {
 
     List<Recipe> findAllByIngredientsOrderByTitle(String ingredient);
 
-    List<Recipe> findAllByDescriptionLikeAndTitleLike(String description, String title);
+    List<Recipe> findAllByDescriptionIgnoreCaseLikeOrTitleIgnoreCaseLike(String description, String title);
 }

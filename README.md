@@ -30,7 +30,7 @@ A receita deve ser salva na collection `recipe` e seguir o seguinte esquema:
 
 ```json
 {
-  "_id": "5bc698399531146718e31220",
+  "id": "5bc698399531146718e31220",
   "title": "Bolo de chocolate",
   "description": "Bolo de chocolate caseiro",
   "likes": [
@@ -43,7 +43,7 @@ A receita deve ser salva na collection `recipe` e seguir o seguinte esquema:
   ],
   "comments": [
     {
-      "_id": "5bc6a737953114503ce9cd7f",
+      "id": "5bc6a737953114503ce9cd7f",
       "comment": "Muito gostoso!"
     }
   ]

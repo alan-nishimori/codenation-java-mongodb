@@ -15,6 +15,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Recipe save(Recipe recipe) {
+        recipe.setId(new ObjectId().toHexString());
         return repository.save(recipe);
     }
 
@@ -41,12 +42,13 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public List<Recipe> listByIngredient(String ingredient) {
-        return repository.findAllByIngredientsOrderByTitle(ingredient);
+        List<Recipe> recipes = repository.findAllByIngredientsOrderByTitle(ingredient);
+        return recipes.isEmpty() ? null : recipes;
     }
 
     @Override
     public List<Recipe> search(String search) {
-        return repository.findAllByDescriptionLikeAndTitleLike(search, search);
+        return repository.findAllByDescriptionIgnoreCaseLikeOrTitleIgnoreCaseLike(search, search);
     }
 
     @Override
@@ -69,7 +71,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public RecipeComment addComment(String id, RecipeComment comment) {
-        comment.set_id(new ObjectId().toHexString());
+        comment.setId(new ObjectId().toHexString());
         Optional<Recipe> recipeEntity = repository.findById(id);
         if (recipeEntity.isPresent()) {
             recipeEntity.get().addComment(comment);
@@ -82,7 +84,7 @@ public class RecipeServiceImpl implements RecipeService {
     public void updateComment(String id, String commentId, RecipeComment comment) {
         Optional<Recipe> recipeEntity = repository.findById(id);
         if (recipeEntity.isPresent()) {
-            comment.set_id(commentId);
+            comment.setId(commentId);
             recipeEntity.get().updateComment(comment);
             repository.save(recipeEntity.get());
         }
